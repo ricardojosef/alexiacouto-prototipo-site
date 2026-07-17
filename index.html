@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Aléxia Couto — Nutrologia | Florianópolis</title>
+<meta name="description" content="Emagrecimento com estratégia e ciência. Nutrologia e saúde intestinal em Florianópolis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<style>
+:root{
+  --branco:#FFFFFF;
+  --rose-claro:#F8F0ED;
+  --rose:#EBD6CF;
+  --rose-escuro:#B98E82;
+  --verde:#5F7D6C;
+  --verde-escuro:#48614F;
+  --ink:#423834;
+  --ink-suave:#7A6C66;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Jost', 'Segoe UI', sans-serif;
+  --script:'Pinyon Script', cursive;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--branco);font-weight:300;line-height:1.7;font-size:17px}
+img{max-width:100%;display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;color:var(--ink)}
+.eyebrow{font-family:var(--script);font-size:2rem;color:var(--rose-escuro);display:block;margin-bottom:.4rem}
+.btn{display:inline-block;background:var(--verde);color:#fff;text-decoration:none;font-family:var(--sans);font-weight:400;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;padding:1rem 2.4rem;border-radius:999px;transition:background .25s ease, transform .25s ease}
+.btn:hover{background:var(--verde-escuro);transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--rose-escuro);outline-offset:3px}
+section{padding:96px 0}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#fff 55%,var(--rose-claro) 55.05%);padding:72px 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
+.hero-copy{padding-bottom:96px}
+.hero-copy .eyebrow{font-size:2.6rem}
+.hero h1{font-size:clamp(2.6rem,5.2vw,4.2rem);margin-bottom:.3rem}
+.hero h1 span{color:var(--rose-escuro);font-weight:400}
+.hero .sub{font-size:1.15rem;color:var(--ink-suave);max-width:44ch;margin:1.2rem 0 2.2rem}
+.hero .creds{list-style:none;margin:0 0 2.4rem;font-size:.95rem;color:var(--ink-suave)}
+.hero .creds li{padding-left:1.4rem;position:relative;margin-bottom:.35rem}
+.hero .creds li::before{content:"";position:absolute;left:0;top:.62em;width:.55rem;height:.55rem;border-radius:50%;background:var(--rose)}
+.hero-foto{position:relative;align-self:end}
+.hero-foto img{width:100%;max-width:570px;margin:0 auto;filter:drop-shadow(0 24px 40px rgba(66,56,52,.14));
+ mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);}
+.hero-foto::before{content:"";position:absolute;inset:auto 8% 0 8%;height:78%;background:var(--rose);border-radius:220px 220px 0 0;z-index:-1}
+
+/* QUEM SOU */
+.quem .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.quem-foto{position:relative}
+.quem-foto img{border-radius:220px 220px 16px 16px;box-shadow:0 20px 48px rgba(66,56,52,.12)}
+.quem-foto::after{content:"";position:absolute;top:-18px;right:-18px;bottom:18px;left:18px;border:1px solid var(--rose);border-radius:220px 220px 16px 16px;z-index:-1}
+.quem h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1.2rem}
+.quem p{margin-bottom:1rem;color:var(--ink-suave)}
+.quem strong{color:var(--ink);font-weight:500}
+
+/* QUADROS */
+.quadros{background:var(--rose-claro)}
+.quadros h2{font-size:clamp(2rem,3.6vw,2.8rem);text-align:center;margin-bottom:.6rem}
+.quadros .lead{text-align:center;color:var(--ink-suave);max-width:56ch;margin:0 auto 3.2rem}
+.center{text-align:center}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:#fff;border-radius:20px;padding:2.2rem 1.8rem;box-shadow:0 12px 32px rgba(66,56,52,.06)}
+.card h3{font-size:1.35rem;margin:.9rem 0 .5rem}
+.card p{font-size:.95rem;color:var(--ink-suave)}
+.card .dot{width:44px;height:44px;border-radius:50%;background:var(--rose);display:flex;align-items:center;justify-content:center;color:var(--verde-escuro)}
+.card .dot svg{width:22px;height:22px}
+
+/* EMAGRECIMENTO */
+.emagre .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.emagre h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1.2rem}
+.emagre p{color:var(--ink-suave);margin-bottom:1rem}
+.emagre ul{list-style:none;margin:1.4rem 0 0}
+.emagre li{padding-left:2rem;position:relative;margin-bottom:.8rem;color:var(--ink)}
+.emagre li::before{content:"✓";position:absolute;left:0;color:var(--verde);font-weight:500}
+.emagre-fotos{display:grid;gap:20px}
+.emagre-fotos img{border-radius:18px;box-shadow:0 16px 36px rgba(66,56,52,.1)}
+.emagre-fotos img:last-child{margin-left:12%}
+
+/* DEPOIMENTOS */
+.depo{background:var(--rose-claro)}
+.depo h2{font-size:clamp(2rem,3.6vw,2.8rem);text-align:center;margin-bottom:3rem}
+.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.depo-card{background:#fff;border-radius:20px;padding:2.2rem 1.9rem;box-shadow:0 12px 32px rgba(66,56,52,.06);display:flex;flex-direction:column}
+.depo-card .aspas{font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--rose);height:2.2rem}
+.depo-card p{font-style:italic;color:var(--ink-suave);font-size:.98rem;flex:1}
+.depo-card .nome{margin-top:1.4rem;font-weight:500;font-style:normal;color:var(--verde-escuro);letter-spacing:.06em;text-transform:uppercase;font-size:.8rem}
+
+/* CTA */
+.cta{background:linear-gradient(160deg,var(--verde) 0%,var(--verde-escuro) 100%);color:#fff;text-align:center}
+.cta .eyebrow{color:var(--rose)}
+.cta h2{color:#fff;font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:1rem}
+.cta p{max-width:52ch;margin:0 auto 2.4rem;color:rgba(255,255,255,.85)}
+.cta .btn{background:#fff;color:var(--verde-escuro)}
+.cta .btn:hover{background:var(--rose-claro)}
+.cta .local{margin-top:1.6rem;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+
+/* FOOTER */
+footer{padding:48px 0;background:#fff}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+footer .marca{font-family:var(--serif);font-size:1.4rem}
+footer .marca span{font-family:var(--script);color:var(--rose-escuro);font-size:1.6rem;margin-right:.3rem}
+footer p{font-size:.85rem;color:var(--ink-suave)}
+
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero .wrap,.quem .wrap,.emagre .wrap{grid-template-columns:1fr}
+  .hero{background:linear-gradient(180deg,var(--rose-claro) 0%,#fff 46%);padding-top:32px}
+  .hero .wrap{gap:24px}
+  .hero-foto{order:-1;max-width:400px;margin-left:0 auto;
+  margin-right:0 auto; margin-top:0 auto; margin-bottom:-60px}
+  .hero-foto::before{inset:auto 4% 0 4%;height:70%}
+  .hero-copy{padding-bottom:56px;text-align:center}
+  .hero-copy .eyebrow{font-size:2.1rem}
+  .hero h1{font-size:clamp(2.1rem,8vw,2.8rem)}
+  .hero .sub{margin-left:auto;margin-right:auto;font-size:1.05rem}
+  .hero .creds li{padding-left:0}
+  .hero .creds li::before{display:none}
+  .cards,.depo-grid{grid-template-columns:1fr}
+  .quem-foto{max-width:380px;margin:0 auto}
+  .emagre-fotos{grid-template-columns:1fr 1fr}
+  .emagre-fotos img:last-child{margin-left:0}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow">prazer,</span>
+      <h1>Dra. Aléxia <span>Couto</span></h1>
+      <p class="sub">Emagrecimento com estratégia e ciência. Um acompanhamento médico individualizado para transformar sua saúde de dentro para fora.</p>
+      <ul class="creds">
+        <li>Pós-graduada em Nutrologia — Albert Einstein</li>
+        <li>Nutrologia Esportiva — ABRAN</li>
+        <li>Saúde intestinal e metabolismo</li>
+      </ul>
+      <a class="btn" href="#agende">Agende sua consulta</a>
+    </div>
+    <div class="hero-foto">
+      <img src="alexiahero.png" alt="Dra. Aléxia Couto de jaleco branco, braços cruzados, sorrindo">
+    </div>
+  </div>
+</header>
+
+<!-- QUEM SOU EU -->
+<section class="quem">
+  <div class="wrap">
+    <div class="quem-foto">
+      <img src="alexia-azul.png" alt="Dra. Aléxia Couto com vestido azul, sorrindo">
+    </div>
+    <div>
+      <span class="eyebrow">quem sou eu</span>
+      <h2>Medicina com escuta, ciência e propósito</h2>
+      <p>Sou a <strong>Dra. Aléxia Couto</strong>, médica mineira, de Belo Horizonte, com 31 anos e uma missão clara: ajudar você a emagrecer e viver melhor com base no que a ciência tem de mais atual.</p>
+      <p>Sou <strong>pós-graduada em Nutrologia pelo Hospital Israelita Albert Einstein</strong> e em <strong>Nutrologia Esportiva pela ABRAN</strong>, com atuação dedicada ao emagrecimento estratégico e à saúde intestinal.</p>
+      <p>Hoje atendo em <strong>Florianópolis</strong>, unindo acolhimento e rigor científico em consultas que enxergam você por inteiro — histórico, rotina, exames e objetivos.</p>
+      <p style="font-size:.85rem;color:var(--ink-suave)">CRM 39863</p>
+    </div>
+  </div>
+</section>
+
+<!-- QUADROS ATENDIDOS -->
+<section class="quadros">
+  <div class="wrap">
+    <span class="eyebrow" style="display:block;text-align:center">para quem é</span>
+    <h2>Quadros atendidos</h2>
+    <p class="lead">O acompanhamento nutrológico é indicado para quem busca resultados duradouros, com saúde e sem radicalismos.</p>
+    <div class="cards">
+      <div class="card">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 8c0 6 3 8 7 8s7-2 7-8"/></svg></div>
+        <h3>Emagrecimento</h3>
+        <p>Sobrepeso e obesidade tratados com estratégia individualizada, farmacologia quando indicada e acompanhamento próximo — sem dietas milagrosas.</p>
+      </div>
+      <div class="card">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <h3>Saúde intestinal</h3>
+        <p>Distensão, constipação, disbiose e desconfortos digestivos que impactam energia, imunidade e até o peso.</p>
+      </div>
+      <div class="card">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 17l4-8 4 5 4-9 4 12"/></svg></div>
+        <h3>Nutrologia esportiva</h3>
+        <p>Performance, composição corporal e recuperação para quem treina — do iniciante ao atleta.</p>
+      </div>
+      <div class="card">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.6-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.4-9 9-9 9z"/></svg></div>
+        <h3>Saúde metabólica</h3>
+        <p>Resistência insulínica, pré-diabetes, colesterol alterado e outras condições que pedem cuidado antes que se agravem.</p>
+      </div>
+      <div class="card">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Cansaço e baixa energia</h3>
+        <p>Investigação de carências nutricionais, sono e hábitos que roubam sua disposição no dia a dia.</p>
+      </div>
+      <div class="card">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 21V9a6 6 0 0112 0v12M6 13h12"/></svg></div>
+        <h3>Reeducação alimentar</h3>
+        <p>Construção de uma relação leve e sustentável com a comida, respeitando sua rotina e suas preferências.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE EMAGRECIMENTO -->
+<section class="emagre">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">sobre emagrecimento</span>
+      <h2>Estratégia e ciência, não força de vontade</h2>
+      <p>Emagrecer não é uma questão de disciplina, e sim de <strong style="color:var(--ink)">fisiologia</strong>. A obesidade é uma doença crônica, multifatorial — e tratá-la exige método, não culpa.</p>
+      <p>No consultório, cada plano nasce da sua história: exames completos, avaliação da composição corporal, análise da saúde intestinal e do seu estilo de vida real.</p>
+      <ul>
+        <li>Plano individualizado, sem dietas restritivas genéricas</li>
+        <li>Uso criterioso de medicações, quando há indicação</li>
+        <li>Cuidado com o intestino como aliado do metabolismo</li>
+        <li>Acompanhamento contínuo para manter o resultado</li>
+      </ul>
+    </div>
+    <div class="emagre-fotos">
+      <img src="alexia-einstein.png" alt="Dra. Aléxia em frente ao Hospital Israelita Albert Einstein">
+      <img src="alexia-congresso.png" alt="Dra. Aléxia no Congresso Internacional de Nutrologia">
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depo">
+  <div class="wrap">
+    <span class="eyebrow" style="display:block;text-align:center">quem já viveu</span>
+    <h2>Depoimentos</h2>
+    <div class="depo-grid">
+      <div class="depo-card">
+        <div class="aspas">“</div>
+        <p>Pela primeira vez emagreci sem passar fome e sem terrorismo nutricional. A Dra. Aléxia explica tudo, e isso muda a forma como a gente se cuida.</p>
+        <div class="nome">Mariana S.</div>
+      </div>
+      <div class="depo-card">
+        <div class="aspas">“</div>
+        <p>Descobri que meu intestino era o vilão da minha energia. Depois do tratamento, o inchaço sumiu e a balança finalmente respondeu.</p>
+        <div class="nome">Carolina F.</div>
+      </div>
+      <div class="depo-card">
+        <div class="aspas">“</div>
+        <p>Atendimento humano de verdade. Ela olha exame por exame, ajusta o plano à minha rotina de treinos e acompanha de perto. Recomendo demais.</p>
+        <div class="nome">Rodrigo A.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="agende">
+  <div class="wrap">
+    <span class="eyebrow">chegou a sua vez</span>
+    <h2>Agende sua consulta</h2>
+    <p>Dê o primeiro passo para um emagrecimento com estratégia, ciência e acompanhamento de verdade. As agendas são limitadas para garantir um cuidado próximo.</p>
+    <a class="btn" href="https://wa.me/5548999999999" target="_blank" rel="noopener">Quero agendar agora</a>
+    <p class="local">Florianópolis · SC</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="marca"><span>dra.</span>Aléxia Couto</div>
+    <p>Nutrologia · CRM 39863 · Florianópolis — © 2026 Todos os direitos reservados</p>
+  </div>
+</footer>
+
+</body>
+</html>
