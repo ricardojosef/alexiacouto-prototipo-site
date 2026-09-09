@@ -4,276 +4,526 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dra. Aléxia Couto — Nutrologia | Florianópolis</title>
-<meta name="description" content="Emagrecimento com estratégia e ciência. Nutrologia e saúde intestinal em Florianópolis.">
+<meta name="description" content="Emagrecimento com estratégia e ciência. Acompanhamento médico individualizado em Nutrologia e saúde intestinal. Presencial em Florianópolis e online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@200;300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 <style>
 :root{
   --branco:#FFFFFF;
   --rose-claro:#F8F0ED;
+  --rose-nevoa:#FDF8F6;
   --rose:#EBD6CF;
   --rose-escuro:#B98E82;
   --verde:#5F7D6C;
   --verde-escuro:#48614F;
+  --verde-noite:#2E3F35;
   --ink:#423834;
   --ink-suave:#7A6C66;
+  --ouro:#C9A227;
+  --ouro-claro:#E8CE86;
   --serif:'Cormorant Garamond', Georgia, serif;
   --sans:'Jost', 'Segoe UI', sans-serif;
   --script:'Pinyon Script', cursive;
+
+  --glass-bg:rgba(255,255,255,.55);
+  --glass-brd:rgba(255,255,255,.75);
+  --glass-sombra:0 24px 60px -20px rgba(66,56,52,.22);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--branco);font-weight:300;line-height:1.7;font-size:17px}
+body{
+  font-family:var(--sans);color:var(--ink);font-weight:300;line-height:1.75;font-size:17px;
+  background:var(--rose-nevoa);
+  overflow-x:hidden;
+}
 img{max-width:100%;display:block}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;color:var(--ink)}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.14;color:var(--ink);letter-spacing:-.01em}
+section{padding:120px 0;position:relative}
+
+/* ---------- Fundo vivo: degradês em camadas ---------- */
+.aurora{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.aurora span{position:absolute;display:block;border-radius:50%;filter:blur(90px);opacity:.55}
+.aurora .a1{width:52vw;height:52vw;left:-14vw;top:-10vw;background:radial-gradient(circle at 30% 30%,var(--rose) 0%,rgba(235,214,207,0) 70%)}
+.aurora .a2{width:46vw;height:46vw;right:-12vw;top:22vh;background:radial-gradient(circle at 60% 40%,rgba(95,125,108,.42) 0%,rgba(95,125,108,0) 70%)}
+.aurora .a3{width:60vw;height:60vw;left:10vw;bottom:-24vw;background:radial-gradient(circle at 50% 50%,rgba(232,206,134,.38) 0%,rgba(232,206,134,0) 70%)}
+.grao{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='.28'/></svg>")}
+
+/* ---------- Tipografia de apoio ---------- */
 .eyebrow{font-family:var(--script);font-size:2rem;color:var(--rose-escuro);display:block;margin-bottom:.4rem}
-.btn{display:inline-block;background:var(--verde);color:#fff;text-decoration:none;font-family:var(--sans);font-weight:400;letter-spacing:.12em;text-transform:uppercase;font-size:.82rem;padding:1rem 2.4rem;border-radius:999px;transition:background .25s ease, transform .25s ease}
-.btn:hover{background:var(--verde-escuro);transform:translateY(-2px)}
-.btn:focus-visible{outline:3px solid var(--rose-escuro);outline-offset:3px}
-section{padding:96px 0}
+.filete{width:64px;height:1px;background:linear-gradient(90deg,var(--ouro),rgba(201,162,39,0));margin:1.4rem 0 1.6rem}
+.center .filete{margin-left:auto;margin-right:auto;background:linear-gradient(90deg,rgba(201,162,39,0),var(--ouro),rgba(201,162,39,0))}
+.center{text-align:center}
 
-/* HERO */
-.hero{background:linear-gradient(135deg,#fff 55%,var(--rose-claro) 55.05%);padding:72px 0 0;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:end}
-.hero-copy{padding-bottom:96px}
-.hero-copy .eyebrow{font-size:2.6rem}
-.hero h1{font-size:clamp(2.6rem,5.2vw,4.2rem);margin-bottom:.3rem}
-.hero h1 span{color:var(--rose-escuro);font-weight:400}
-.hero .sub{font-size:1.15rem;color:var(--ink-suave);max-width:44ch;margin:1.2rem 0 2.2rem}
-.hero .creds{list-style:none;margin:0 0 2.4rem;font-size:.95rem;color:var(--ink-suave)}
-.hero .creds li{padding-left:1.4rem;position:relative;margin-bottom:.35rem}
-.hero .creds li::before{content:"";position:absolute;left:0;top:.62em;width:.55rem;height:.55rem;border-radius:50%;background:var(--rose)}
-.hero-foto{position:relative;align-self:end}
-.hero-foto img{width:100%;max-width:570px;margin:0 auto;filter:drop-shadow(0 24px 40px rgba(66,56,52,.14));
- mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);}
-.hero-foto::before{content:"";position:absolute;inset:auto 8% 0 8%;height:78%;background:var(--rose);border-radius:220px 220px 0 0;z-index:-1}
+/* ---------- Botão: dourado escovado, textura e brilho ---------- */
+.btn{
+  --brilho:-130%;
+  position:relative;display:inline-block;isolation:isolate;overflow:hidden;
+  color:#3A2E14;text-decoration:none;font-family:var(--sans);font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;font-size:.8rem;
+  padding:1.15rem 2.9rem;border-radius:999px;
+  background:
+    linear-gradient(115deg,#F6E5B4 0%,#D9B45F 22%,#B98E3F 46%,#EBD79C 62%,#C9A227 82%,#9C7A22 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.75),
+    inset 0 -1px 0 rgba(90,66,14,.35),
+    0 10px 26px -8px rgba(154,120,32,.6),
+    0 2px 6px rgba(66,56,52,.14);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1), box-shadow .35s ease, filter .35s ease;
+}
+.btn::before{ /* lustro suave, sem estrias */
+  content:"";position:absolute;inset:0;border-radius:inherit;z-index:-1;
+  background:linear-gradient(180deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,0) 52%,rgba(120,90,20,.18) 100%);
+}
+.btn::after{ /* varredura de luz */
+  content:"";position:absolute;top:-60%;bottom:-60%;left:var(--brilho);width:38%;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.72),rgba(255,255,255,0));
+  transform:skewX(-18deg);transition:left .75s cubic-bezier(.3,.8,.3,1);
+}
+.btn:hover{transform:translateY(-3px);filter:saturate(1.08);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(90,66,14,.4),0 18px 38px -10px rgba(154,120,32,.7),0 3px 8px rgba(66,56,52,.16)}
+.btn:hover::after{left:130%}
+.btn:active{transform:translateY(-1px)}
+.btn:focus-visible{outline:2px solid var(--verde-escuro);outline-offset:4px}
+.btn-fantasma{
+  background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.42);
+  box-shadow:none;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)
+}
+.btn-fantasma::before{background:linear-gradient(180deg,rgba(255,255,255,.22),rgba(255,255,255,0) 60%)}
+.btn-fantasma:hover{background:rgba(255,255,255,.24);box-shadow:0 14px 34px -12px rgba(0,0,0,.4)}
 
-/* QUEM SOU */
-.quem .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
-.quem-foto{position:relative}
-.quem-foto img{border-radius:220px 220px 16px 16px;box-shadow:0 20px 48px rgba(66,56,52,.12)}
-.quem-foto::after{content:"";position:absolute;top:-18px;right:-18px;bottom:18px;left:18px;border:1px solid var(--rose);border-radius:220px 220px 16px 16px;z-index:-1}
-.quem h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1.2rem}
+/* ---------- Superfície de vidro ---------- */
+.vidro{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-brd);
+  border-radius:26px;
+  backdrop-filter:blur(22px) saturate(1.25);
+  -webkit-backdrop-filter:blur(22px) saturate(1.25);
+  box-shadow:var(--glass-sombra);
+  position:relative;overflow:hidden;
+}
+.vidro::before{
+  content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(150deg,rgba(255,255,255,.6) 0%,rgba(255,255,255,0) 42%);
+}
+
+/* ---------- HERO ---------- */
+.hero{padding:170px 0 90px;overflow:hidden;position:relative;isolation:isolate;
+  background:linear-gradient(115deg,#FDF8F6 0%,#F6EAE4 45%,#E9D3CA 100%)}
+.hero-bg{position:absolute;inset:0;z-index:-2;
+  background:url("bgdraalexia.png") right center/auto 100% no-repeat}
+.hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;min-height:62vh}
+.hero-copy .eyebrow{font-size:2.8rem}
+.hero h1{font-size:clamp(2.7rem,5.6vw,4.6rem);margin-bottom:.2rem}
+.hero h1 .sobrenome{
+  display:block;
+  background:linear-gradient(100deg,var(--rose-escuro) 0%,var(--ouro) 55%,var(--rose-escuro) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;font-weight:400;
+}
+.hero .sub{font-size:1.15rem;color:var(--ink-suave);max-width:46ch;margin:1.4rem 0 2rem}
+.hero .creds{list-style:none;margin:0 0 2.4rem;display:flex;flex-direction:column;gap:.55rem}
+.hero .creds li{
+  font-size:.92rem;color:var(--ink);letter-spacing:.01em;
+  display:inline-flex;align-items:center;gap:.6rem;align-self:flex-start;
+  padding:.5rem 1.1rem .5rem .8rem;border-radius:999px;
+  background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.8);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 8px 20px -14px rgba(66,56,52,.5);
+}
+.hero .creds li::before{content:"";width:.5rem;height:.5rem;border-radius:50%;
+  background:linear-gradient(140deg,var(--ouro-claro),var(--ouro));flex:none}
+.hero-acoes{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.hero-acoes .crm{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-suave)}
+
+/* selo flutuante de vidro */
+.hero-selos{display:flex;flex-direction:column;gap:16px;align-items:flex-end;align-self:center}
+.selo{
+  padding:1.1rem 1.4rem;border-radius:20px;
+  background:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.85);
+  backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);
+  box-shadow:0 22px 50px -22px rgba(66,56,52,.45);text-align:left;
+}
+.selo b{display:block;font-family:var(--serif);font-size:1.5rem;color:var(--verde-escuro);line-height:1.1}
+.selo span{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-suave)}
+
+/* ---------- QUEM SOU ---------- */
+.quem .wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:72px;align-items:center}
+.quem-foto{position:relative;padding:18px}
+.quem-foto img{border-radius:240px 240px 20px 20px;position:relative;z-index:2;
+  box-shadow:0 34px 70px -30px rgba(66,56,52,.5)}
+.quem-foto .aro{position:absolute;inset:0;border-radius:250px 250px 30px 30px;
+  background:linear-gradient(160deg,rgba(255,255,255,.7),rgba(235,214,207,.5) 60%,rgba(201,162,39,.25));
+  border:1px solid rgba(255,255,255,.8);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.quem h2{font-size:clamp(2.1rem,3.8vw,3rem);margin-bottom:.4rem}
 .quem p{margin-bottom:1rem;color:var(--ink-suave)}
 .quem strong{color:var(--ink);font-weight:500}
+.quem .crm{display:inline-block;margin-top:.6rem;font-size:.76rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--verde-escuro);padding:.45rem 1.1rem;border-radius:999px;
+  border:1px solid rgba(95,125,108,.3);background:rgba(255,255,255,.5)}
 
-/* QUADROS */
-.quadros{background:var(--rose-claro)}
-.quadros h2{font-size:clamp(2rem,3.6vw,2.8rem);text-align:center;margin-bottom:.6rem}
-.quadros .lead{text-align:center;color:var(--ink-suave);max-width:56ch;margin:0 auto 3.2rem}
-.center{text-align:center}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:#fff;border-radius:20px;padding:2.2rem 1.8rem;box-shadow:0 12px 32px rgba(66,56,52,.06)}
-.card h3{font-size:1.35rem;margin:.9rem 0 .5rem}
+/* ---------- QUADROS ---------- */
+.quadros h2{font-size:clamp(2.1rem,3.8vw,3rem);text-align:center}
+.quadros .lead{text-align:center;color:var(--ink-suave);max-width:58ch;margin:0 auto 3.4rem}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{padding:2.4rem 2rem;transition:transform .45s cubic-bezier(.2,.7,.3,1),box-shadow .45s ease}
+.card:hover{transform:translateY(-8px);box-shadow:0 40px 70px -28px rgba(66,56,52,.34)}
+.card h3{font-size:1.42rem;margin:1.1rem 0 .5rem}
 .card p{font-size:.95rem;color:var(--ink-suave)}
-.card .dot{width:44px;height:44px;border-radius:50%;background:var(--rose);display:flex;align-items:center;justify-content:center;color:var(--verde-escuro)}
-.card .dot svg{width:22px;height:22px}
+.card .dot{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  color:var(--verde-escuro);
+  background:linear-gradient(150deg,rgba(255,255,255,.9),rgba(235,214,207,.9));
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 22px -12px rgba(66,56,52,.5)}
+.card .dot svg{width:24px;height:24px}
 
-/* EMAGRECIMENTO */
-.emagre .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
-.emagre h2{font-size:clamp(2rem,3.6vw,2.8rem);margin-bottom:1.2rem}
+/* ---------- EMAGRECIMENTO ---------- */
+.emagre .wrap{display:grid;grid-template-columns:1.06fr .94fr;gap:68px;align-items:center}
+.emagre h2{font-size:clamp(2.1rem,3.8vw,3rem)}
 .emagre p{color:var(--ink-suave);margin-bottom:1rem}
-.emagre ul{list-style:none;margin:1.4rem 0 0}
-.emagre li{padding-left:2rem;position:relative;margin-bottom:.8rem;color:var(--ink)}
-.emagre li::before{content:"✓";position:absolute;left:0;color:var(--verde);font-weight:500}
-.emagre-fotos{display:grid;gap:20px}
-.emagre-fotos img{border-radius:18px;box-shadow:0 16px 36px rgba(66,56,52,.1)}
-.emagre-fotos img:last-child{margin-left:12%}
+.emagre strong{color:var(--ink);font-weight:500}
+.emagre ul{list-style:none;margin:1.8rem 0 0;display:grid;gap:.7rem}
+.emagre li{position:relative;padding:.85rem 1.2rem .85rem 3rem;border-radius:16px;color:var(--ink);
+  background:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.8);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 12px 30px -22px rgba(66,56,52,.6);font-size:.98rem}
+.emagre li::before{content:"✓";position:absolute;left:1.2rem;top:.85rem;
+  color:var(--ouro);font-weight:500}
+.emagre-fotos{display:grid;gap:22px}
+.emagre-fotos figure{position:relative;border-radius:22px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.75);box-shadow:0 30px 60px -28px rgba(66,56,52,.5)}
+.emagre-fotos figure::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(255,255,255,.12) 0%,rgba(46,63,53,.18) 100%)}
+.emagre-fotos figure:last-child{margin-left:12%}
 
-/* DEPOIMENTOS */
-.depo{background:var(--rose-claro)}
-.depo h2{font-size:clamp(2rem,3.6vw,2.8rem);text-align:center;margin-bottom:3rem}
-.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.depo-card{background:#fff;border-radius:20px;padding:2.2rem 1.9rem;box-shadow:0 12px 32px rgba(66,56,52,.06);display:flex;flex-direction:column}
-.depo-card .aspas{font-family:var(--serif);font-size:3.4rem;line-height:1;color:var(--rose);height:2.2rem}
-.depo-card p{font-style:italic;color:var(--ink-suave);font-size:.98rem;flex:1}
-.depo-card .nome{margin-top:1.4rem;font-weight:500;font-style:normal;color:var(--verde-escuro);letter-spacing:.06em;text-transform:uppercase;font-size:.8rem}
+/* ---------- DEPOIMENTOS ---------- */
+.depo h2{font-size:clamp(2.1rem,3.8vw,3rem);text-align:center}
+.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:3rem}
+.depo-card{padding:2.4rem 2rem;display:flex;flex-direction:column}
+.depo-card .aspas{font-family:var(--serif);font-size:3.8rem;line-height:1;height:2.2rem;
+  background:linear-gradient(140deg,var(--ouro-claro),var(--rose-escuro));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.depo-card p{font-style:italic;color:var(--ink-suave);font-size:1rem;flex:1;font-family:var(--serif);font-size:1.18rem;line-height:1.55}
+.depo-card .nome{margin-top:1.5rem;font-weight:500;color:var(--verde-escuro);
+  letter-spacing:.12em;text-transform:uppercase;font-size:.76rem}
 
-/* CTA */
-.cta{background:linear-gradient(160deg,var(--verde) 0%,var(--verde-escuro) 100%);color:#fff;text-align:center}
-.cta .eyebrow{color:var(--rose)}
-.cta h2{color:#fff;font-size:clamp(2.2rem,4vw,3.2rem);margin-bottom:1rem}
-.cta p{max-width:52ch;margin:0 auto 2.4rem;color:rgba(255,255,255,.85)}
-.cta .btn{background:#fff;color:var(--verde-escuro)}
-.cta .btn:hover{background:var(--rose-claro)}
-.cta .local{margin-top:1.6rem;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+/* ---------- CTA ---------- */
+.cta{color:#fff;text-align:center;overflow:hidden}
+.cta-painel{
+  position:relative;padding:5.5rem 2rem;border-radius:36px;overflow:hidden;
+  background:linear-gradient(155deg,var(--verde) 0%,var(--verde-escuro) 52%,var(--verde-noite) 100%);
+  box-shadow:0 50px 90px -40px rgba(46,63,53,.8);
+}
+.cta-painel::before{content:"";position:absolute;inset:-40%;
+  background:radial-gradient(circle at 22% 18%,rgba(232,206,134,.36) 0%,rgba(232,206,134,0) 45%),
+             radial-gradient(circle at 82% 78%,rgba(235,214,207,.32) 0%,rgba(235,214,207,0) 50%)}
+.cta-painel::after{content:"";position:absolute;inset:14px;border-radius:26px;
+  border:1px solid rgba(255,255,255,.18);pointer-events:none}
+.cta-painel > *{position:relative;z-index:2}
+.cta .eyebrow{color:var(--ouro-claro)}
+.cta h2{color:#fff;font-size:clamp(2.2rem,4.2vw,3.4rem);margin-bottom:1rem}
+.cta p{max-width:54ch;margin:0 auto 1rem;color:rgba(255,255,255,.86)}
+.cta .btn{margin-top:1.6rem}
+.cta .local{margin-top:1.8rem;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7)}
 
-/* FOOTER */
-footer{padding:48px 0;background:#fff}
-footer .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
-footer .marca{font-family:var(--serif);font-size:1.4rem}
-footer .marca span{font-family:var(--script);color:var(--rose-escuro);font-size:1.6rem;margin-right:.3rem}
-footer p{font-size:.85rem;color:var(--ink-suave)}
+/* ---------- FOOTER ---------- */
+footer{padding:72px 0 48px;position:relative;z-index:2}
+.rodape{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;padding:2.6rem 2.4rem}
+.rodape .marca{font-family:var(--serif);font-size:1.5rem}
+.rodape .marca em{font-family:var(--script);font-style:normal;color:var(--rose-escuro);font-size:1.7rem;margin-right:.3rem}
+.rodape h4{font-family:var(--sans);font-weight:400;font-size:.74rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--verde-escuro);margin-bottom:.8rem}
+.rodape p,.rodape li{font-size:.88rem;color:var(--ink-suave)}
+.rodape ul{list-style:none;display:grid;gap:.35rem}
+.legal{margin-top:2rem;text-align:center;font-size:.8rem;color:var(--ink-suave)}
+.legal em{display:block;font-style:italic;margin-bottom:.5rem;opacity:.9}
 
-@media (prefers-reduced-motion:reduce){.btn{transition:none}}
-@media (max-width:900px){
-  section{padding:64px 0}
-  .hero .wrap,.quem .wrap,.emagre .wrap{grid-template-columns:1fr}
-  .hero{background:linear-gradient(180deg,var(--rose-claro) 0%,#fff 46%);padding-top:32px}
-  .hero .wrap{gap:24px}
-  .hero-foto{order:-1;max-width:400px;margin-left:0 auto;
-  margin-right:0 auto; margin-top:0 auto; margin-bottom:-60px}
-  .hero-foto::before{inset:auto 4% 0 4%;height:70%}
-  .hero-copy{padding-bottom:56px;text-align:center}
-  .hero-copy .eyebrow{font-size:2.1rem}
-  .hero h1{font-size:clamp(2.1rem,8vw,2.8rem)}
-  .hero .sub{margin-left:auto;margin-right:auto;font-size:1.05rem}
-  .hero .creds li{padding-left:0}
-  .hero .creds li::before{display:none}
+/* ---------- Estados de animação ----------
+   O conteúdo é visível por padrão. Só some quando o GSAP confirma
+   que carregou e assume o controle, evitando página em branco se o CDN falhar. */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
+
+/* ---------- Responsivo ---------- */
+@media(max-width:980px){
+  section{padding:84px 0}
+  .hero{padding:70px 0 60px}
+  .hero .wrap,.quem .wrap,.emagre .wrap{grid-template-columns:1fr;gap:40px}
+  /* no mobile a médica vai para o topo, o texto abaixo dela */
+  .hero .wrap{min-height:0}
+  .hero-bg{position:relative;z-index:0;height:min(46vh,340px);inset:auto;margin-bottom:8px;
+    background-position:center top;background-size:auto 118%}
+  .hero-selos{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center}
+  .hero-copy{text-align:center}
+  .hero-copy .eyebrow{font-size:2.2rem}
+  .hero .sub{margin-left:auto;margin-right:auto}
+  .hero .creds{align-items:center}
+  .hero .creds li{align-self:center}
+  .hero-acoes{justify-content:center}
+  .filete{margin-left:auto;margin-right:auto}
   .cards,.depo-grid{grid-template-columns:1fr}
-  .quem-foto{max-width:380px;margin:0 auto}
+  .quem-foto{max-width:400px;margin:0 auto}
   .emagre-fotos{grid-template-columns:1fr 1fr}
-  .emagre-fotos img:last-child{margin-left:0}
+  .emagre-fotos figure:last-child{margin-left:0}
+  .cta-painel{padding:3.6rem 1.4rem;border-radius:28px}
+  .rodape{grid-template-columns:1fr;text-align:center}
+  .rodape ul{justify-items:center}
+}
+@media(max-width:520px){
+  .emagre-fotos{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<div class="aurora" aria-hidden="true"><span class="a1"></span><span class="a2"></span><span class="a3"></span></div>
+<div class="grao" aria-hidden="true"></div>
+
+<!-- 1. HERO -->
 <header class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow">prazer,</span>
-      <h1>Dra. Aléxia <span>Couto</span></h1>
-      <p class="sub">Emagrecimento com estratégia e ciência. Um acompanhamento médico individualizado para transformar sua saúde de dentro para fora.</p>
+      <span class="eyebrow reveal">prazer,</span>
+      <h1 class="reveal">Dra. Aléxia <span class="sobrenome">Couto</span></h1>
+      <div class="filete reveal"></div>
+      <p class="sub reveal">Emagrecimento com estratégia e ciência. Um acompanhamento médico individualizado para transformar sua saúde de dentro para fora.</p>
       <ul class="creds">
-        <li>Pós-graduada em Nutrologia — Albert Einstein</li>
-        <li>Nutrologia Esportiva — ABRAN</li>
-        <li>Saúde intestinal e metabolismo</li>
+        <li class="reveal">Pós-graduada em Nutrologia - Albert Einstein</li>
+        <li class="reveal">Nutrologia Esportiva - ABRAN</li>
+        <li class="reveal">Saúde intestinal e metabolismo</li>
       </ul>
-      <a class="btn" href="#agende">Agende sua consulta</a>
+      <div class="hero-acoes reveal">
+        <a class="btn" href="#agende">Agende sua consulta</a>
+        <span class="crm">CRM 39863</span>
+      </div>
     </div>
-    <div class="hero-foto">
-      <img src="alexiahero.png" alt="Dra. Aléxia Couto de jaleco branco, braços cruzados, sorrindo">
-    </div>
+    
   </div>
 </header>
 
-<!-- QUEM SOU EU -->
-<section class="quem">
+<!-- 2. QUEM SOU EU -->
+<section class="quem" id="quem">
   <div class="wrap">
-    <div class="quem-foto">
+    <div class="quem-foto reveal">
+      <div class="aro" aria-hidden="true"></div>
       <img src="alexia-azul.png" alt="Dra. Aléxia Couto com vestido azul, sorrindo">
     </div>
     <div>
-      <span class="eyebrow">quem sou eu</span>
-      <h2>Medicina com escuta, ciência e propósito</h2>
-      <p>Sou a <strong>Dra. Aléxia Couto</strong>, médica mineira, de Belo Horizonte, com 31 anos e uma missão clara: ajudar você a emagrecer e viver melhor com base no que a ciência tem de mais atual.</p>
-      <p>Sou <strong>pós-graduada em Nutrologia pelo Hospital Israelita Albert Einstein</strong> e em <strong>Nutrologia Esportiva pela ABRAN</strong>, com atuação dedicada ao emagrecimento estratégico e à saúde intestinal.</p>
-      <p>Hoje atendo em <strong>Florianópolis</strong>, unindo acolhimento e rigor científico em consultas que enxergam você por inteiro — histórico, rotina, exames e objetivos.</p>
-      <p style="font-size:.85rem;color:var(--ink-suave)">CRM 39863</p>
+      <span class="eyebrow reveal">quem sou eu</span>
+      <h2 class="reveal">Medicina com escuta, ciência e propósito</h2>
+      <div class="filete reveal"></div>
+      <p class="reveal">Sou a <strong>Dra. Aléxia Couto</strong>, médica mineira, de Belo Horizonte, com 33 anos e uma missão clara: ajudar você a emagrecer e viver melhor com base no que a ciência tem de mais atual. Cuidar da saúde é olhar para cada pessoa de forma individual. Meu objetivo é ajudar você a emagrecer, melhorar sua saúde e construir resultados que façam sentido para a sua vida, unindo estratégia, ciência e uma abordagem individualizada.</p>
+      <p class="reveal">Sou <strong>pós-graduada em Nutrologia pelo Hospital Israelita Albert Einstein</strong> e em <strong>Nutrologia Esportiva pela ABRAN</strong>, com atuação dedicada ao emagrecimento estratégico e à saúde intestinal.</p>
+      <p class="reveal">Hoje atendo em <strong>Florianópolis</strong>, unindo acolhimento e rigor científico em consultas que enxergam você por inteiro — histórico, rotina, exames e objetivos.</p>
+      <span class="crm reveal">CRM 39863</span>
     </div>
   </div>
 </section>
 
-<!-- QUADROS ATENDIDOS -->
-<section class="quadros">
+<!-- 3. PARA QUEM É -->
+<section class="quadros" id="quadros">
   <div class="wrap">
-    <span class="eyebrow" style="display:block;text-align:center">para quem é</span>
-    <h2>Quadros atendidos</h2>
-    <p class="lead">O acompanhamento nutrológico é indicado para quem busca resultados duradouros, com saúde e sem radicalismos.</p>
+    <div class="center">
+      <span class="eyebrow reveal">para quem é</span>
+      <h2 class="reveal">Quadros atendidos</h2>
+      <div class="filete reveal"></div>
+    </div>
+    <p class="lead reveal">O acompanhamento nutrológico é indicado para quem busca resultados duradouros, com saúde e sem radicalismos.</p>
     <div class="cards">
-      <div class="card">
-        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M5 8c0 6 3 8 7 8s7-2 7-8"/></svg></div>
+      <article class="card vidro reveal">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M5 8c0 6 3 8 7 8s7-2 7-8"/></svg></div>
         <h3>Emagrecimento</h3>
         <p>Sobrepeso e obesidade tratados com estratégia individualizada, farmacologia quando indicada e acompanhamento próximo — sem dietas milagrosas.</p>
-      </div>
-      <div class="card">
-        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></div>
+      </article>
+      <article class="card vidro reveal">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></div>
         <h3>Saúde intestinal</h3>
         <p>Distensão, constipação, disbiose e desconfortos digestivos que impactam energia, imunidade e até o peso.</p>
-      </div>
-      <div class="card">
-        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 17l4-8 4 5 4-9 4 12"/></svg></div>
+      </article>
+      <article class="card vidro reveal">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 17l4-8 4 5 4-9 4 12"/></svg></div>
         <h3>Nutrologia esportiva</h3>
-        <p>Performance, composição corporal e recuperação para quem treina — do iniciante ao atleta.</p>
-      </div>
-      <div class="card">
-        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.6-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.4-9 9-9 9z"/></svg></div>
+        <p>Performance, composição corporal e recuperação para quem treina.</p>
+      </article>
+      <article class="card vidro reveal">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.6-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.4-9 9-9 9z"/></svg></div>
         <h3>Saúde metabólica</h3>
         <p>Resistência insulínica, pré-diabetes, colesterol alterado e outras condições que pedem cuidado antes que se agravem.</p>
-      </div>
-      <div class="card">
-        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+      </article>
+      <article class="card vidro reveal">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
         <h3>Cansaço e baixa energia</h3>
         <p>Investigação de carências nutricionais, sono e hábitos que roubam sua disposição no dia a dia.</p>
-      </div>
-      <div class="card">
-        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 21V9a6 6 0 0112 0v12M6 13h12"/></svg></div>
+      </article>
+      <article class="card vidro reveal">
+        <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 21V9a6 6 0 0112 0v12M6 13h12"/></svg></div>
         <h3>Reeducação alimentar</h3>
         <p>Construção de uma relação leve e sustentável com a comida, respeitando sua rotina e suas preferências.</p>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- SOBRE EMAGRECIMENTO -->
-<section class="emagre">
+<!-- 4. SOBRE EMAGRECIMENTO -->
+<section class="emagre" id="emagrecimento">
   <div class="wrap">
     <div>
-      <span class="eyebrow">sobre emagrecimento</span>
-      <h2>Estratégia e ciência, não força de vontade</h2>
-      <p>Emagrecer não é uma questão de disciplina, e sim de <strong style="color:var(--ink)">fisiologia</strong>. A obesidade é uma doença crônica, multifatorial — e tratá-la exige método, não culpa.</p>
-      <p>No consultório, cada plano nasce da sua história: exames completos, avaliação da composição corporal, análise da saúde intestinal e do seu estilo de vida real.</p>
+      <span class="eyebrow reveal">sobre emagrecimento</span>
+      <h2 class="reveal">Estratégia e ciência, não força de vontade</h2>
+      <div class="filete reveal"></div>
+      <p class="reveal">Emagrecer não é uma questão de disciplina, e sim de <strong>fisiologia</strong>. A obesidade é uma doença crônica, multifatorial — e tratá-la exige método, não culpa.</p>
+      <p class="reveal">No consultório, cada plano nasce da sua história: exames completos, avaliação da composição corporal, análise da saúde intestinal e do seu estilo de vida real.</p>
       <ul>
-        <li>Plano individualizado, sem dietas restritivas genéricas</li>
-        <li>Uso criterioso de medicações, quando há indicação</li>
-        <li>Cuidado com o intestino como aliado do metabolismo</li>
-        <li>Acompanhamento contínuo para manter o resultado</li>
+        <li class="reveal">Plano individualizado, sem dietas restritivas genéricas</li>
+        <li class="reveal">Uso criterioso de medicações, quando há indicação</li>
+        <li class="reveal">Cuidado com o intestino como aliado do metabolismo</li>
+        <li class="reveal">Acompanhamento contínuo para manter o resultado</li>
       </ul>
     </div>
     <div class="emagre-fotos">
-      <img src="alexia-einstein.png" alt="Dra. Aléxia em frente ao Hospital Israelita Albert Einstein">
-      <img src="alexia-congresso.png" alt="Dra. Aléxia no Congresso Internacional de Nutrologia">
+      <figure class="reveal"><img src="alexia-einstein.png" alt="Dra. Aléxia em frente ao Hospital Israelita Albert Einstein"></figure>
+      <figure class="reveal"><img src="alexia-congresso.png" alt="Dra. Aléxia no Congresso Internacional de Nutrologia"></figure>
     </div>
   </div>
 </section>
 
-<!-- DEPOIMENTOS -->
-<section class="depo">
+<!-- 5. DEPOIMENTOS -->
+<section class="depo" id="depoimentos">
   <div class="wrap">
-    <span class="eyebrow" style="display:block;text-align:center">quem já viveu</span>
-    <h2>Depoimentos</h2>
+    <div class="center">
+      <span class="eyebrow reveal">quem já viveu</span>
+      <h2 class="reveal">Depoimentos</h2>
+      <div class="filete reveal"></div>
+    </div>
     <div class="depo-grid">
-      <div class="depo-card">
-        <div class="aspas">“</div>
+      <blockquote class="depo-card vidro reveal">
+        <div class="aspas" aria-hidden="true">“</div>
         <p>Pela primeira vez emagreci sem passar fome e sem terrorismo nutricional. A Dra. Aléxia explica tudo, e isso muda a forma como a gente se cuida.</p>
         <div class="nome">Mariana S.</div>
-      </div>
-      <div class="depo-card">
-        <div class="aspas">“</div>
+      </blockquote>
+      <blockquote class="depo-card vidro reveal">
+        <div class="aspas" aria-hidden="true">“</div>
         <p>Descobri que meu intestino era o vilão da minha energia. Depois do tratamento, o inchaço sumiu e a balança finalmente respondeu.</p>
         <div class="nome">Carolina F.</div>
-      </div>
-      <div class="depo-card">
-        <div class="aspas">“</div>
+      </blockquote>
+      <blockquote class="depo-card vidro reveal">
+        <div class="aspas" aria-hidden="true">“</div>
         <p>Atendimento humano de verdade. Ela olha exame por exame, ajusta o plano à minha rotina de treinos e acompanha de perto. Recomendo demais.</p>
         <div class="nome">Rodrigo A.</div>
-      </div>
+      </blockquote>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
+<!-- 6. CTA -->
 <section class="cta" id="agende">
   <div class="wrap">
-    <span class="eyebrow">chegou a sua vez</span>
-    <h2>Agende sua consulta</h2>
-    <p>Dê o primeiro passo para um emagrecimento com estratégia, ciência e acompanhamento de verdade. As agendas são limitadas para garantir um cuidado próximo.</p>
-    <a class="btn" href="https://wa.me/5548999999999" target="_blank" rel="noopener">Quero agendar agora</a>
-    <p class="local">Florianópolis · SC</p>
+    <div class="cta-painel reveal">
+      <span class="eyebrow">agende sua consulta</span>
+      <h2>O primeiro passo para entender seu corpo começa aqui</h2>
+      <p>Consulta particular ou plano de acompanhamento, presencial ou online, de onde você estiver.</p>
+      <p>Marque um horário e vamos conversar sobre o que o seu corpo tem tentado te dizer.</p>
+      <a class="btn" href="https://wa.me/5548999999999" target="_blank" rel="noopener">Agendar minha consulta</a>
+      <p class="local">Atendimento presencial e online · Todo o Brasil e exterior</p>
+    </div>
   </div>
 </section>
 
+<!-- 7. FOOTER -->
 <footer>
   <div class="wrap">
-    <div class="marca"><span>dra.</span>Aléxia Couto</div>
-    <p>Nutrologia · CRM 39863 · Florianópolis — © 2026 Todos os direitos reservados</p>
+    <div class="rodape vidro reveal">
+      <div>
+        <div class="marca"><em>dra.</em>Aléxia Couto</div>
+        <p>Médica Nutróloga · CRM 39863 | RQE</p>
+      </div>
+      <div>
+        <h4>Formação</h4>
+        <ul>
+          <li>Pós-graduação em Nutrologia — Hospital Israelita Albert Einstein</li>
+          <li>Pós-graduação em Nutrologia Esportiva — ABRAN/BWS</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Atendimento</h4>
+        <ul>
+          <li>Presencial — Florianópolis · SC</li>
+          <li>Online — Todo o Brasil e exterior</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <em>Este site tem caráter meramente informativo e não substitui uma consulta médica.</em>
+      © 2026 Dra. Aléxia Couto. Todos os direitos reservados.
+    </div>
   </div>
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  var reduz = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* Sem GSAP (CDN offline/bloqueado) ou com movimento reduzido: a página
+     permanece como está no CSS — totalmente visível. */
+  if(!window.gsap || !window.ScrollTrigger || reduz) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.defaults({ease:'power3.out'});
+
+  /* Entrada do hero */
+  var tl = gsap.timeline({delay:.15});
+  tl.from('.hero-bg',{opacity:0,duration:1.3})
+    .from('.hero-copy .reveal',{y:28,opacity:0,duration:.9,stagger:.09},'-=1.05')
+    .from('.hero-selos .selo',{x:28,opacity:0,duration:.9,stagger:.14},'-=.7');
+
+  /* Reveal por scroll — esconde só agora, já com o GSAP no controle */
+  gsap.utils.toArray('section .reveal, footer .reveal').forEach(function(el){
+    gsap.set(el,{opacity:0});
+    gsap.to(el,{
+      y:0,opacity:1,duration:.95,
+      startAt:{y:34},
+      scrollTrigger:{trigger:el,start:'top 88%',once:true}
+    });
+  });
+
+  /* Cards e depoimentos em cascata */
+  ['.cards','.depo-grid'].forEach(function(sel){
+    var grade = document.querySelector(sel);
+    if(!grade) return;
+    gsap.set(grade.children,{opacity:0});
+    gsap.to(grade.children,{
+      y:0,opacity:1,duration:.9,stagger:.1,
+      startAt:{y:44},
+      scrollTrigger:{trigger:grade,start:'top 82%',once:true}
+    });
+  });
+
+  /* Parallax suave das camadas de degradê */
+  gsap.to('.aurora .a1',{yPercent:-18,ease:'none',scrollTrigger:{scrub:1.2,start:0,end:'max'}});
+  gsap.to('.aurora .a2',{yPercent:14,ease:'none',scrollTrigger:{scrub:1.2,start:0,end:'max'}});
+  gsap.to('.aurora .a3',{yPercent:-10,ease:'none',scrollTrigger:{scrub:1.2,start:0,end:'max'}});
+
+  /* Respiração lenta das auroras */
+  gsap.to('.aurora .a1',{scale:1.12,duration:11,repeat:-1,yoyo:true,ease:'sine.inOut'});
+  gsap.to('.aurora .a2',{scale:1.16,duration:14,repeat:-1,yoyo:true,ease:'sine.inOut',delay:1.5});
+  gsap.to('.aurora .a3',{scale:1.1,duration:16,repeat:-1,yoyo:true,ease:'sine.inOut',delay:.8});
+
+  /* Flutuação dos selos */
+  gsap.to('.hero-selos .selo',{y:-9,duration:4.5,repeat:-1,yoyo:true,ease:'sine.inOut',stagger:.7});
+
+  /* Parallax das fotos da seção emagrecimento */
+  gsap.utils.toArray('.emagre-fotos figure').forEach(function(fig,i){
+    gsap.to(fig,{yPercent:i===0?-6:8,ease:'none',
+      scrollTrigger:{trigger:'.emagre',start:'top bottom',end:'bottom top',scrub:1}});
+  });
+})();
+</script>
 
 </body>
 </html>
