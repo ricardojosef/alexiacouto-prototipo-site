@@ -14,12 +14,12 @@
   --rose-claro:#F8F0ED;
   --rose-nevoa:#FDF8F6;
   --rose:#EBD6CF;
-  --rose-escuro:#B98E82;
+  --rose-escuro:#6b4d46;
   --verde:#5F7D6C;
   --verde-escuro:#48614F;
   --verde-noite:#2E3F35;
   --ink:#423834;
-  --ink-suave:#7A6C66;
+  --ink-suave:#2e221e;
   --ouro:#C9A227;
   --ouro-claro:#E8CE86;
   --serif:'Cormorant Garamond', Georgia, serif;
@@ -113,7 +113,7 @@ section{padding:120px 0;position:relative}
 .hero{padding:170px 0 90px;overflow:hidden;position:relative;isolation:isolate;
   background:linear-gradient(115deg,#FDF8F6 0%,#F6EAE4 45%,#E9D3CA 100%)}
 .hero-bg{position:absolute;inset:0;z-index:-2;
-  background:url("bgdraalexia.png") right center/auto 100% no-repeat}
+  background:url("bgalexiacouto.webp") top center/auto 100% no-repeat; }
 .hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center;min-height:62vh}
 .hero-copy .eyebrow{font-size:2.8rem}
 .hero h1{font-size:clamp(2.7rem,5.6vw,4.6rem);margin-bottom:.2rem}
@@ -251,12 +251,16 @@ footer{padding:72px 0 48px;position:relative;z-index:2}
 /* ---------- Responsivo ---------- */
 @media(max-width:980px){
   section{padding:84px 0}
-  .hero{padding:70px 0 60px}
+  .hero{padding:0 0 60px}
   .hero .wrap,.quem .wrap,.emagre .wrap{grid-template-columns:1fr;gap:40px}
   /* no mobile a médica vai para o topo, o texto abaixo dela */
   .hero .wrap{min-height:0}
-  .hero-bg{position:relative;z-index:0;height:min(46vh,340px);inset:auto;margin-bottom:8px;
-    background-position:center top;background-size:auto 118%}
+  /* imagem sangrando nas bordas laterais e superior em qualquer largura:
+     caixa com a proporção da foto (780×805) + cover */
+  .hero-bg{position:relative;z-index:0;inset:auto;display:block;
+    width:100%;aspect-ratio:780/805;max-height:88vh;margin:0 0 8px;
+    background-image:url("newbgmob-alexiacouto\ \(1\).webp");
+    background-position:center top;background-size:cover}
   .hero-selos{flex-direction:row;flex-wrap:wrap;justify-content:center;align-items:center}
   .hero-copy{text-align:center}
   .hero-copy .eyebrow{font-size:2.2rem}
@@ -289,7 +293,7 @@ footer{padding:72px 0 48px;position:relative;z-index:2}
   <div class="wrap">
     <div class="hero-copy">
       <span class="eyebrow reveal">prazer,</span>
-      <h1 class="reveal">Dra. Aléxia <span class="sobrenome">Couto</span></h1>
+      <h1 class="reveal">Dra. Aléxia Couto</h1>
       <div class="filete reveal"></div>
       <p class="sub reveal">Emagrecimento com estratégia e ciência. Um acompanhamento médico individualizado para transformar sua saúde de dentro para fora.</p>
       <ul class="creds">
@@ -311,15 +315,16 @@ footer{padding:72px 0 48px;position:relative;z-index:2}
   <div class="wrap">
     <div class="quem-foto reveal">
       <div class="aro" aria-hidden="true"></div>
-      <img src="alexia-azul.png" alt="Dra. Aléxia Couto com vestido azul, sorrindo">
+      <img src="azul-alexia (1).png" alt="Dra. Aléxia Couto com vestido azul, sorrindo">
     </div>
     <div>
       <span class="eyebrow reveal">quem sou eu</span>
       <h2 class="reveal">Medicina com escuta, ciência e propósito</h2>
       <div class="filete reveal"></div>
       <p class="reveal">Sou a <strong>Dra. Aléxia Couto</strong>, médica mineira, de Belo Horizonte, com 33 anos e uma missão clara: ajudar você a emagrecer e viver melhor com base no que a ciência tem de mais atual. Cuidar da saúde é olhar para cada pessoa de forma individual. Meu objetivo é ajudar você a emagrecer, melhorar sua saúde e construir resultados que façam sentido para a sua vida, unindo estratégia, ciência e uma abordagem individualizada.</p>
-      <p class="reveal">Sou <strong>pós-graduada em Nutrologia pelo Hospital Israelita Albert Einstein</strong> e em <strong>Nutrologia Esportiva pela ABRAN</strong>, com atuação dedicada ao emagrecimento estratégico e à saúde intestinal.</p>
-      <p class="reveal">Hoje atendo em <strong>Florianópolis</strong>, unindo acolhimento e rigor científico em consultas que enxergam você por inteiro — histórico, rotina, exames e objetivos.</p>
+      <p class="reveal">Sou <strong>pós-graduada em Nutrologia pelo Hospital Israelita Albert Einstein</strong> e em <strong>Nutrologia Esportiva pela BWS/ABRAN</strong>, com atuação dedicada ao emagrecimento estratégico e à saúde intestinal.
+</p>
+      <p class="reveal">Cada consulta é um espaço de escuta e cuidado, unindo acolhimento, rigor científico e um olhar atento para a sua história, sua rotina, seus exames e seus objetivos.</p>
       <span class="crm reveal">CRM 39863</span>
     </div>
   </div>
@@ -386,8 +391,7 @@ footer{padding:72px 0 48px;position:relative;z-index:2}
       </ul>
     </div>
     <div class="emagre-fotos">
-      <figure class="reveal"><img src="alexia-einstein.png" alt="Dra. Aléxia em frente ao Hospital Israelita Albert Einstein"></figure>
-      <figure class="reveal"><img src="alexia-congresso.png" alt="Dra. Aléxia no Congresso Internacional de Nutrologia"></figure>
+      <figure class="reveal"><img src="albert-alexia (1).png" alt="Dra. Aléxia em frente ao Hospital Israelita Albert Einstein"></figure>
     </div>
   </div>
 </section>
@@ -440,20 +444,20 @@ footer{padding:72px 0 48px;position:relative;z-index:2}
     <div class="rodape vidro reveal">
       <div>
         <div class="marca"><em>dra.</em>Aléxia Couto</div>
-        <p>Médica Nutróloga · CRM 39863 | RQE</p>
+        <p>Médica Nutróloga · CRM 39863</p>
       </div>
       <div>
         <h4>Formação</h4>
         <ul>
-          <li>Pós-graduação em Nutrologia — Hospital Israelita Albert Einstein</li>
+          <li>Pós-graduação em Nutrologia no Hospital Israelita Albert Einstein</li>
+          <li>Pós-graduação em Nutrologia Esportiva ABRAN/BWS</li>
           <li>Pós-graduação em Nutrologia Esportiva — ABRAN/BWS</li>
         </ul>
       </div>
       <div>
         <h4>Atendimento</h4>
         <ul>
-          <li>Presencial — Florianópolis · SC</li>
-          <li>Online — Todo o Brasil e exterior</li>
+          <li>Presencial e Online</li>
         </ul>
       </div>
     </div>
